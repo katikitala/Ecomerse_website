@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</head>
+<body>
+    
+    <div class="d-flex justify-content-center align-items-center vh-100">
+        <form action="register.php" class="bg-warning p-3" method="POST" onsubmit="return isFormValid()">
+                <div class="text-center">
+                    <h5>Register Here</h5>
+                </div>
+
+                <input  class="form-control" required type="text" placeholder="Username" name="uname">
+                <input class="form-control mt-2" required type="password" placeholder="Password" name="upass1">
+                <input class="form-control mt-2" required type="password" placeholder="Retype-Password" name="upass2">
+                <input required class="form-control mt-2" type="text" placeholder="Phone number" name="phonenumber">
+                <div class="text-center mt-5">
+                    <h5>Delivery adress</h5>
+                </div>
+
+                <textarea required class="form-control  mt-2" name="adress1" placeholder="H.No/street" cols="30" rows="2"></textarea>
+                <textarea class="form-control  mt-2" name="adress2"  placeholder="city, State(Optional)" cols="30" rows="1"></textarea>
+                <input required class="form-control mt-2" type="text" placeholder="Pincode" name="pincode">
+                <label for="type">location type:</label>
+                <select class="text-center mt-2" name="type" id="type">
+                    <option value="house">Home : 8AM - 10PM</option>
+                    <option value="office">Office : 9AM - 5PM</option>
+                    <option value="other">Other</option>
+                </select>
+                <div class="text-center">
+                    <button class="btn btn-success mt-2">Register</button>
+                </div>
+        </form>
+    </div>
+
+    <script>
+        function isFormValid()
+        {
+            pass1=document.getElementsByName("upass1")[0].value;
+            pass2=document.getElementsByName("upass2")[0].value;
+
+            if(pass1==pass2)
+            {
+            
+                return true
+            }
+            alert("Password Mismatch");
+            return false;
+        }
+
+        function hide(){
+            document.getElementById("f").style.display = "none";
+ 
+            document.getElementById("s").style.display = "block";
+        }
+    </script>
+
+</body>
+</html>
